@@ -2,11 +2,11 @@ import java.util.*;
 import java.util.Random;
 
 
-public class NumberGuessingGame {
+public class SkillRack {
     public static void main(String[] args) {
         // Step 1: Create a Random Number Generator (1-100)
         Random random = new Random();
-        int targetNumber = random.nextInt(100) + 1;  // Generates a number between 1 and 100
+        int target = random.nextInt(100) + 1;  // Generates a number between 1 and 100
 
         // Step 2: Initialize Scanner for User Input
         Scanner scanner = new Scanner(System.in);
@@ -23,15 +23,15 @@ public class NumberGuessingGame {
             attempts++;
 
             // Step 4: Give hints to the user
-            if (guess > targetNumber) {
+            if (guess > target) {
                 System.out.println("Too high! Try a smaller number. 🔽");
-            } else if (guess < targetNumber) {
+            } else if (guess < target) {
                 System.out.println("Too low! Try a bigger number. 🔼");
             } else {
-                System.out.println("🎉 Congratulations! You guessed the number " + targetNumber + " in " + attempts + " attempts.");
+                System.out.println("🎉 Congratulations! You guessed the number " + target + " in " + attempts + " attempts.");
             }
 
-        } while (guess != targetNumber); // Repeat until the user guesses correctly
+        } while (guess != target); // Repeat until the user guesses correctly
 
         // Step 5: Close the scanner
         scanner.close();
